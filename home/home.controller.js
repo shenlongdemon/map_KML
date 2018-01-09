@@ -14,11 +14,17 @@
         }
         function initMap(map){
             $scope.map = map;
-            var georssLayer = new google.maps.KmlLayer({
-                url: 'https://raw.githubusercontent.com/mapbox/Simple-KML/master/sample/example.kml?ver=' + Date.now()  
-              });
-            georssLayer.setMap($scope.map);
-            georssLayer.addListener('click', function(kmlEvent) {
+            $scope.georssLayer = new google.maps.KmlLayer(
+                 'https://developers.google.com/kml/documentation/Point-load.kml' //?ver=' + Date.now()  
+                ,
+                  {
+                      suppressInfoWindows: true,
+                      map: $scope.map,
+                      preserveViewport: true
+                  }
+              );
+              $scope.georssLayer.setMap($scope.map);
+              $scope.georssLayer.addListener('click', function(kmlEvent) {
                 alert("");
             });
         }
