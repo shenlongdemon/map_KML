@@ -15,7 +15,7 @@
         function initMap(map){
             $scope.map = map;
             $scope.georssLayer = new google.maps.KmlLayer(
-                 'https://developers.google.com/kml/documentation/Point-load.kml' //?ver=' + Date.now()  
+                 'https://developers.google.com/kml/documentation/KML_Samples.kml' //?ver=' + Date.now()  
                  // 'https://developers.google.com/kml/documentation/Update-load.kml?hl=vi' //
                 ,
                   {
